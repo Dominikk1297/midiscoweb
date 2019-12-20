@@ -84,15 +84,15 @@ function ctlUserAlta()
                 $estado
             ];
             
-           // if (modeloUserComprobar($user, $nuevo)) {
+           if (modeloUserComprobar($user, $nuevo)) {
                 modeloUserGetAll();
                 modeloUserAdd($user, $nuevo);
                 modeloUserSave();
                 header('Location:index.php?orden=VerUsuarios');
-           // } else {
+           } else {
                 $msg = "NO cumple los requisitos";
                 include_once 'plantilla/fnuevo.php';
-           // }
+           }
         }
     } else {
         include_once 'plantilla/fnuevo.php';
